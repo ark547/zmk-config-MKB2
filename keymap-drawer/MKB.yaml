@@ -41,7 +41,7 @@ layers:
   - LGUI
   - LALT
   - {t: SPACE, h: Num}
-  - {t: SPACE, h: Fnc}
+  - {t: CAPS, h: Fnc}
   - {t: SPACE, h: Fnc}
   - {t: SPACE, h: Num}
   - LEFT
