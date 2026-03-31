@@ -42,7 +42,7 @@ layers:
   - LALT
   - {t: SPACE, h: Num}
   - {t: CAPS, h: Fnc}
-  - {t: SPACE, h: Fnc}
+  - {t: BACKSPACE, h: Fnc}
   - {t: SPACE, h: Num}
   - LEFT
   - DOWN
