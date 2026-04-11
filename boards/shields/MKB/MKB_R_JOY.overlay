@@ -45,7 +45,7 @@
             input-code = <INPUT_REL_Y>;
         };
     };
-
+/* 分割キーボードで反対側にデータを送る設定 */
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
@@ -55,6 +55,21 @@
             status = "okay";
             device = <&anin0>;
             reg = <2>;
+        };
+    };
+    /* ★ここが移植ポイント：左手からコピーしたリスナー設定★ */
+    analog_input_listener {
+        status = "okay";
+        compatible = "zmk,input-listener";
+        device = <&anin0>;
+        
+        layer0 {
+            layers = <0>;
+            input-processors = <&mouse_runtime_input_processor>;
+        };
+        layer1 {
+            layers = <1>;
+            input-processors = <&zip_xy_to_scroll_mapper &scroll_runtime_input_processor>;
         };
     };
 };
