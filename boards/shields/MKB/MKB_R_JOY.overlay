@@ -4,10 +4,10 @@
 #include <dt-bindings/zmk/keys.h>
 
 &adc {
-    status = "okay";
+	status = "okay";
 };
 
-&right_encoder {
+&right_encoder{
     a-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
     b-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
     steps = <3>;
@@ -19,7 +19,6 @@
 };
 
 / {
-    /* スティックの物理設定 */
     anin0: analog_input_0 {
         compatible = "zmk,analog-input";
         sampling-hz = <100>;
@@ -47,7 +46,6 @@
         };
     };
 
-    /* 分割キーボード用の通信設定 */
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
@@ -57,19 +55,6 @@
             status = "okay";
             device = <&anin0>;
             reg = <2>;
-        };
-    };
-
-    /* ★ここが「マウスとして動かす」ための指示です★ */
-    analog_input_listener {
-        compatible = "zmk,input-listener";
-        status = "okay";
-        device = <&anin0>;
-
-        layer0 {
-            layers = <0 1 2 3>; // 全レイヤーでマウス移動を有効にする
-            input-processors = <&mouse_runtime_input_processor>;
-        全レイヤーでマウス移動を有効にする
         };
     };
 };
