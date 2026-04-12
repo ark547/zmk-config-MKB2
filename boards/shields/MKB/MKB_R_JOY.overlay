@@ -57,17 +57,4 @@
             reg = <2>;
         };
     };
-
-    /* ★ここが「マウスとして動かす」ための指示です★ */
-    analog_input_listener {
-        compatible = "zmk,input-listener";
-        status = "okay";
-        device = <&anin0>;
-
-        layer0 {
-            layers = <0 1 2 3>; // 全レイヤーでマウス移動を有効にする
-            input-processors = <&mouse_runtime_input_processor>;
-        全レイヤーでマウス移動を有効にする
-        };
-    };
 };
