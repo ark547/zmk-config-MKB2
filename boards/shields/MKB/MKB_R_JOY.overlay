@@ -56,15 +56,5 @@
             device = <&anin0>;
             reg = <2>;
         };
-	    analog_input_listener {
-	        status = "okay";
-	        compatible = "zmk,input-listener";
-	        device = <&anin0>;
-	        
-        layer0 {
-            layers = <0 1 2 3>; 
-            input-processors = <&zip_xy_scaler 1 1>;
-	        };
-	    };
     };
 };
